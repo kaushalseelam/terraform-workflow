@@ -17,9 +17,9 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: Build the Docker image
-        run: docker build ./docker --tag oholic/webserver
+        run: docker build ./docker --tag ${{ secrets.DOCKER_USER }}/webserver
       - name: docker push
-        run: docker push oholic/webserver
+        run: docker push ${{ secrets.DOCKER_USER }}/webserver
 
   inform_about_apply:
     name: Inform About Apply
