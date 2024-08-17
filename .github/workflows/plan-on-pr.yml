@@ -16,7 +16,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 1.0.9
+          terraform_version: 1.9.4
 #      - name: Run terraform fmt check
 #        run: terraform fmt -check -recursive ./terraform
   plan:
@@ -39,7 +39,7 @@ jobs:
         - name: Setup Terraform
           uses: hashicorp/setup-terraform@v1
           with:
-            terraform_version: 1.0.9
+            terraform_version: 1.9.4
 
         - name: Configure AWS Credentials
           uses: aws-actions/configure-aws-credentials@v1
