@@ -7,7 +7,7 @@ module "eks" {
 
   vpc_id = module.vpc.vpc_id
 
-  node_groups = {
+  eks_managed_node_groups = {
     eks_nodes = {
       desired_capacity     = 1
       max_capacity         = 2
