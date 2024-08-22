@@ -94,8 +94,8 @@ jobs:
 #          echo "$PLAN" >> $GITHUB_ENV
 #          echo "EOF" >> $GITHUB_ENV
 
-      - name: Test EKS Endpoint Connectivity
-        run: curl -k --max-time 10 https://F39E8026A965E3127D2DAB9ADAED7298.gr7.eu-north-1.eks.amazonaws.com/version
+     # - name: Test EKS Endpoint Connectivity
+     #   run: curl -k --max-time 10 https://F39E8026A965E3127D2DAB9ADAED7298.gr7.eu-north-1.eks.amazonaws.com/version
 
       - name: Apply Terraform
         if: steps.plan.outcome == 'success'
