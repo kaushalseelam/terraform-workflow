@@ -44,18 +44,24 @@ jobs:
         - name: Configure AWS Credentials
           uses: aws-actions/configure-aws-credentials@v1
           with:
-            aws-region: eu-north-1
+            aws-region: us-west-1
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
+        
+        - name: Clear Cache
+          run : |
+            cd terraform/${{ matrix.path }}
+            rm -rf .terraform
+        
         - name: Initialize Terraform
           run: |
             cd terraform/${{ matrix.path }}
-            terraform init -input=false          
+            terraform init -reconfigure -input=false          
 
         - name: Plan Terraform
           id: plan
-          continue-on-error: true
+          continue-on-error: false
           run: |
             cd terraform/${{ matrix.path }}
             terraform plan -input=false -no-color          
