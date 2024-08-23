@@ -55,7 +55,7 @@ jobs:
 
         - name: Plan Terraform
           id: plan
-          continue-on-error: true
+          continue-on-error: false
           run: |
             cd terraform/${{ matrix.path }}
             terraform plan -input=false -no-color          
