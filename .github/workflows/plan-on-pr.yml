@@ -49,7 +49,7 @@ jobs:
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
         
-        -name: Clear Cache
+        - name: Clear Cache
           run : |
             cd terraform/${{ matrix.path }}
             rm -rf .terraform
