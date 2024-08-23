@@ -11,7 +11,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "andrei-terraform-state"
+    bucket = "andrei-terraform-state-2"
     key    = "default-infrastructure"
     region = "eu-north-1"
   }
